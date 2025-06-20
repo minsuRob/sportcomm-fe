@@ -1,14 +1,8 @@
-import { Image } from "expo-image";
-import { Platform, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import { ThemedText } from "../ThemedText";
+import { ThemedView } from "../ThemedView";
 
-import { Collapsible } from "@/components/Collapsible";
-import { ExternalLink } from "@/components/ExternalLink";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { IconSymbol } from "@/components/ui/IconSymbol";
-
-export default function TabTwoScreen() {
+export function SamplePostCard() {
   return (
     <ThemedView style={styles.card}>
       <View style={styles.header}>
@@ -27,6 +21,7 @@ export default function TabTwoScreen() {
         source={{ uri: "https://placehold.co/300x200" }}
         style={styles.image}
       />
+
       <View style={styles.actions}>
         <ThemedText>❤️ 12</ThemedText>
         <ThemedText style={{ marginLeft: 16 }}>💬 3</ThemedText>
