@@ -8,7 +8,7 @@ import Animated, {
   useDerivedValue,
   withSpring,
 } from "react-native-reanimated";
-import { cn } from "~/lib/utils";
+import { cn } from "../../lib/utils";
 
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
@@ -20,7 +20,7 @@ const Progress = React.forwardRef<
     ref={ref}
     className={cn(
       "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className,
+      className
     )}
     {...props}
   >
@@ -41,8 +41,13 @@ const Indicator = ({
   const indicator = useAnimatedStyle(() => {
     return {
       width: withSpring(
-        `${interpolate(progress.value, [0, 100], [1, 100], Extrapolation.CLAMP)}%`,
-        { overshootClamping: true },
+        `${interpolate(
+          progress.value,
+          [0, 100],
+          [1, 100],
+          Extrapolation.CLAMP
+        )}%`,
+        { overshootClamping: true }
       ),
     };
   });
@@ -52,7 +57,7 @@ const Indicator = ({
       <ProgressPrimitive.Indicator
         className={cn(
           "h-full w-full flex-1 bg-primary transition-all",
-          className,
+          className
         )}
         style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}
       />
