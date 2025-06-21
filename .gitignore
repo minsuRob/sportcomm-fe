@@ -67,3 +67,6 @@ node_modules/
 .taskmaster
 .roo
 .cursor
+.kilocode
+
+mcp-servers
