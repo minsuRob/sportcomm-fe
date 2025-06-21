@@ -1,30 +1,37 @@
 import { Image, View, Text } from "react-native";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/Card";
 
 export function SamplePostCard() {
   return (
-    <View className="bg-white dark:bg-zinc-900 rounded-xl p-4 mb-4 shadow-sm">
-      <View className="flex-row items-center mb-2">
-        <Image
-          source={{ uri: "https://placehold.co/40x40" }}
-          className="w-10 h-10 rounded-full mr-2"
-        />
-        <Text className="font-semibold text-base text-zinc-900 dark:text-zinc-50">
-          홍길동
+    <Card className="mb-4">
+      <CardHeader className="p-4">
+        <View className="flex-row items-center">
+          <Image
+            source={{ uri: "https://placehold.co/40x40" }}
+            className="w-10 h-10 rounded-full mr-4"
+          />
+          <Text className="font-semibold text-foreground">홍길동</Text>
+        </View>
+      </CardHeader>
+      <CardContent className="p-4 pt-0">
+        <Text className="mb-4 text-base text-foreground">
+          오늘 경기 정말 재밌었어요! #스포츠 #응원
         </Text>
-      </View>
-      <Text className="mb-2 text-base text-zinc-800 dark:text-zinc-200">
-        오늘 경기 정말 재밌었어요! #스포츠 #응원
-      </Text>
-      <Image
-        source={{ uri: "https://placehold.co/300x200" }}
-        className="w-full h-40 rounded-lg mb-2"
-      />
-
-      <View className="flex-row items-center gap-4">
-        <Text className="text-zinc-600 dark:text-zinc-400">❤️❤️ 12</Text>
-        <Text className="text-zinc-600 dark:text-zinc-400">💬 3</Text>
-        <Text className="text-zinc-600 dark:text-zinc-400">🔁</Text>
-      </View>
-    </View>
+        <Image
+          source={{ uri: "https://placehold.co/300x200" }}
+          className="w-full h-48 rounded-lg"
+        />
+      </CardContent>
+      <CardFooter className="flex-row items-center justify-start gap-4 p-4 pt-0">
+        <Text className="text-muted-foreground">❤️ 12</Text>
+        <Text className="text-muted-foreground">💬 3</Text>
+        <Text className="text-muted-foreground">🔁</Text>
+      </CardFooter>
+    </Card>
   );
 }
