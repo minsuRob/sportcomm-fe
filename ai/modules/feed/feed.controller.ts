@@ -9,6 +9,8 @@ export class FeedController {
   @Get()
   @UseGuards(JwtAuthGuard)
   async getFeed(@Req() req) {
+    // For type safety, it's better to have a defined type for the request user
+    // e.g., @Req() req: Request & { user: { id: number } }
     return this.feedService.getFeedForUser(req.user.id);
   }
 }

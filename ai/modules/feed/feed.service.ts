@@ -6,7 +6,9 @@ export class FeedService {
   constructor(private readonly postRepo: PostRepository) {}
 
   async getFeedForUser(userId: number) {
-    // 팔로우 기반 + 인기글(좋아요/댓글 많은 순) + 개인화(간단 MVP)
+    // TODO: Implement more complex feed logic
+    // For now, it fetches generic feed posts.
+    // Future logic: Follow-based + Popular (likes/comments) + Personalization (simple MVP)
     return this.postRepo.findFeedPosts(userId);
   }
 }

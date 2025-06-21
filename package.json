@@ -2,15 +2,16 @@
   "name": "sportcomm-fe-rnr",
   "main": "index.js",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "expo start -c",
-    "dev:web": "expo start -c --web",
-    "dev:android": "expo start -c --android",
     "android": "expo start -c --android",
-    "ios": "expo start -c --ios",
-    "web": "expo start -c --web",
     "clean": "rm -rf .expo node_modules",
-    "postinstall": "npx tailwindcss -i ./global.css -o ./node_modules/.cache/nativewind/global.css"
+    "dev": "expo start -c",
+    "dev:android": "expo start -c --android",
+    "dev:web": "expo start -c --web",
+    "ios": "expo start -c --ios",
+    "postinstall": "npx tailwindcss -i ./global.css -o ./node_modules/.cache/nativewind/global.css",
+    "web": "expo start -c --web"
   },
   "dependencies": {
     "@radix-ui/react-progress": "^1.1.7",
@@ -48,6 +49,5 @@
     "@babel/core": "^7.26.0",
     "@types/react": "~19.0.14",
     "typescript": "^5.8.3"
-  },
-  "private": true
+  }
 }
