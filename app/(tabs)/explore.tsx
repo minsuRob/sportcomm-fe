@@ -3,8 +3,8 @@ import { SampleFeedList } from "../../components/feed/SampleFeedList";
 
 export default function SampleFeedScreen() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ padding: 16 }}>
+    <SafeAreaView className="flex-1">
+      <ScrollView contentContainerClassName="p-4">
         <SampleFeedList />
       </ScrollView>
     </SafeAreaView>

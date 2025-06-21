@@ -1,71 +1,30 @@
-import { Image, StyleSheet, View } from "react-native";
-import { ThemedText } from "../ThemedText";
-import { ThemedView } from "../ThemedView";
+import { Image, View, Text } from "react-native";
 
 export function SamplePostCard() {
   return (
-    <ThemedView style={styles.card}>
-      <View style={styles.header}>
+    <View className="bg-white dark:bg-zinc-900 rounded-xl p-4 mb-4 shadow-sm">
+      <View className="flex-row items-center mb-2">
         <Image
           source={{ uri: "https://placehold.co/40x40" }}
-          style={styles.avatar}
+          className="w-10 h-10 rounded-full mr-2"
         />
-        <ThemedText type="defaultSemiBold" style={styles.nickname}>
+        <Text className="font-semibold text-base text-zinc-900 dark:text-zinc-50">
           홍길동
-        </ThemedText>
+        </Text>
       </View>
-      <ThemedText style={styles.content}>
+      <Text className="mb-2 text-base text-zinc-800 dark:text-zinc-200">
         오늘 경기 정말 재밌었어요! #스포츠 #응원
-      </ThemedText>
+      </Text>
       <Image
         source={{ uri: "https://placehold.co/300x200" }}
-        style={styles.image}
+        className="w-full h-40 rounded-lg mb-2"
       />
 
-      <View style={styles.actions}>
-        <ThemedText>❤️ 12</ThemedText>
-        <ThemedText style={{ marginLeft: 16 }}>💬 3</ThemedText>
-        <ThemedText style={{ marginLeft: 16 }}>🔁</ThemedText>
+      <View className="flex-row items-center gap-4">
+        <Text className="text-zinc-600 dark:text-zinc-400">❤️ 12</Text>
+        <Text className="text-zinc-600 dark:text-zinc-400">💬 3</Text>
+        <Text className="text-zinc-600 dark:text-zinc-400">🔁</Text>
       </View>
-    </ThemedView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 16,
-    shadowColor: "#000",
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 8,
-  },
-  avatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    marginRight: 8,
-  },
-  nickname: {
-    fontSize: 16,
-  },
-  content: {
-    marginBottom: 8,
-  },
-  image: {
-    width: "100%",
-    height: 160,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  actions: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-});
